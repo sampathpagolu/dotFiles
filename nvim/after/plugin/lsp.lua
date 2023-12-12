@@ -21,7 +21,7 @@ end)
 local cmp = require('cmp')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'terraformls', 'pyright', 'eslint' },
+  ensure_installed = {'tsserver', 'rust_analyzer', 'terraformls', 'pyright', 'eslint', 'gopls'},
   handlers = {
     lsp.default_setup,
   }
@@ -37,7 +37,7 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
