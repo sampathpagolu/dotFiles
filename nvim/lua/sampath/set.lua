@@ -73,3 +73,13 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
+
+--- Jenkinsfile
+vim.keymap.set("n", "<C-j>", ":lua require('jenkinsfile_linter').validate()")
+
+-- custom
+vim.keymap.set('v', '<leader>1', 'd<Esc>i"<Esc>pa"<Esc>', { noremap = true })
+vim.keymap.set('v', '<leader>2', "d<Esc>i'<Esc>pa'<Esc>", { noremap = true })
+
+
+vim.keymap.set('n', 'W', 'w', { noremap = true })

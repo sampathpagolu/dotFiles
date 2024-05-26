@@ -34,16 +34,33 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme tokyonight')
         end
     })
-   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('theprimeagen/harpoon')
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use {
+            'ThePrimeagen/harpoon',
+            branch = "harpoon2",
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'nvim-lua/popup.nvim'
+            }
+        }
     use('nvim-treesitter/playground')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use('github/copilot.vim')
     use { "sitiom/nvim-numbertoggle" }
     use("neovim/nvim-lspconfig")
     use('towolf/vim-helm')
+    use {
+        'CopilotC-Nvim/CopilotChat.nvim',
+        branch = "canary",
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'github/copilot.vim'
+        }
+    }
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -63,7 +80,7 @@ return require('packer').startup(function(use)
     use('mfussenegger/nvim-dap')
     use('leoluz/nvim-dap-go')
     use('m4xshen/autoclose.nvim')
-
+    --use({'ckipp01/nvim-jenkinsfile-linter', requires = { "nvim-lua/plenary.nvim" } })
 
     if packer_bootstrap then
         require('packer').sync()
