@@ -1,4 +1,4 @@
-require("jenkinsfile_linter").validate()
+-- require("jenkinsfile_linter").validate()
 
 
 

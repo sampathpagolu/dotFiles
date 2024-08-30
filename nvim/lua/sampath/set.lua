@@ -34,7 +34,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime  = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "150"
 
 vim.g.mapleader     = " "
 
@@ -83,3 +83,10 @@ vim.keymap.set('v', '<leader>2', "d<Esc>i'<Esc>pa'<Esc>", { noremap = true })
 
 
 vim.keymap.set('n', 'W', 'w', { noremap = true })
+
+-- folds
+vim.opt.foldmethod= "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 999
+

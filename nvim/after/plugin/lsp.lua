@@ -21,7 +21,7 @@ end)
 local cmp = require('cmp')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'terraformls', 'pyright', 'eslint', 'gopls'},
+  ensure_installed = {'tsserver', 'terraformls', 'pyright', 'eslint', 'gopls', 'jdtls'},
   handlers = {
     lsp.default_setup,
   }
